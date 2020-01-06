@@ -1,0 +1,13 @@
+using System;
+
+ class Test
+    {
+        static void Main()
+        {
+           float x = (float)Math.PI;
+           double y = Math.PI;
+
+            System.Console.WriteLine(x);
+            System.Console.WriteLine(y);
+        }
+    }
