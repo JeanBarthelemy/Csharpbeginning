@@ -1,0 +1,43 @@
+using System;
+
+namespace quête_tableaux_irréguliers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] tabUni = new int[3, 3] { { 1, 2, 3 }, { 2, 3, 4}, { 3, 4, 5} };
+
+            int[][] tabIrr = new int[3][];
+
+            tabIrr[0] = new int[3];
+            tabIrr[0][0] = tabUni[0, 0];
+            tabIrr[0][1] = tabUni[0, 1];
+            tabIrr[0][2] = tabUni[0, 2];
+            tabIrr[1] = new int[2];
+            tabIrr[1][0] = tabUni[1, 1];
+            tabIrr[1][1] = tabUni[1, 2];
+            tabIrr[2] = new int[1];
+            tabIrr[2][0] = tabUni[2, 2];
+
+
+            for (int i = 0; i < 3; i++)
+            {
+
+
+                for (int j = 0; j < 3-i; j++) 
+                {
+
+                 
+                    Console.Write(tabIrr[i][j] + " ");
+
+
+                }
+
+                Console.WriteLine();
+
+            }
+            
+        }
+    }
+}
