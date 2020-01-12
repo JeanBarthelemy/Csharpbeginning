@@ -1,0 +1,37 @@
+using System;
+
+namespace bool_test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int max;
+            int min;
+            int number;
+
+
+            Console.WriteLine("Enter two values, a minimum and a maximum:");
+            min = int.Parse(Console.ReadLine());
+            max = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a third value which will be limited in between the minimum and maximum values");
+            number = int.Parse(Console.ReadLine());
+
+            if (number < min)
+            {
+                Console.WriteLine("The number should be over or equal to " + min);
+                Console.WriteLine("Resulting integer: " + min);
+            }
+            else
+              if (number > max)
+            {
+                Console.WriteLine("The number should be under or equal to " + max);
+                Console.WriteLine("Resulting integer: " + max);
+            }
+            else
+                Console.WriteLine("Integer is well defined in between the borders");
+
+        }
+    }
+}
