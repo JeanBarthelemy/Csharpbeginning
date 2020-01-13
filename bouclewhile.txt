@@ -1,0 +1,50 @@
+using System;
+
+namespace boucle_test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            
+            string[] moves = new string[32];
+
+           
+
+            for (int i = 0; i < 32; i++)
+            {
+               
+              
+                     Console.WriteLine("Enter a move, or write 'done' when you want the dancer to end");
+                     moves[i] = Console.ReadLine();
+                    if (moves[i] == "done")
+                    {
+
+                    break;
+
+                    }
+
+            }
+
+            Console.WriteLine("Enter how many times you want the dancer to perform all the moves");
+            int iternumber = int.Parse(Console.ReadLine());
+
+           
+            for (int j=0; j < iternumber; j++)
+            {
+                int i = 0;
+
+                while ((moves[i] != null) && (i < moves.Length))
+                {
+
+                    Console.Write(moves[i]+ " ");
+                    i = i + 1;
+                }
+
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
