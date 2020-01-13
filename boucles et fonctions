@@ -7,73 +7,78 @@ namespace lesfonctions
         static void Main(string[] args)
 
         {
-            Console.WriteLine("Type 2 float numbers");
-            float firstOperand = float.Parse(Console.ReadLine());
-            float secondOperand = float.Parse(Console.ReadLine());
-            Console.WriteLine("Type an operation function: Add, Substract, Multiply, Divide or Modulo");
-            string operation = Convert.ToString(Console.Read());
-            if ((operation == "Add") || (operation == "add"))
-            {
 
-                Add(firstOperand, secondOperand);
-                float addition = Add(firstOperand, secondOperand);
-                Console.WriteLine("first operand: " + firstOperand);
-                Console.WriteLine("second operand: " + secondOperand);
-                Console.WriteLine("which operation you choose: add");
-                Console.WriteLine(firstOperand + " + " + secondOperand + " = " + addition);
+            while (true)
+            { 
+
+                Console.WriteLine("Type 2 float numbers");
+                float firstOperand = float.Parse(Console.ReadLine());
+                float secondOperand = float.Parse(Console.ReadLine());
+                Console.WriteLine("Type an operation function: Add, Substract, Multiply, Divide or Modulo");
+                string operation = Console.ReadLine();
+
+                if ((operation == "Add") || (operation == "add"))
+                {
+
+                    Add(firstOperand, secondOperand);
+                    float addition = Add(firstOperand, secondOperand);
+                    Console.WriteLine("first operand: " + firstOperand);
+                    Console.WriteLine("second operand: " + secondOperand);
+                    Console.WriteLine("which operation you choose: add");
+                    Console.WriteLine(firstOperand + " + " + secondOperand + " = " + addition);
+
+                }
+
+                if ((operation == "Substract") || (operation == "substract"))
+                {
+
+                    Substract(firstOperand, secondOperand);
+                    float substraction = Substract(firstOperand, secondOperand);
+                    Console.WriteLine("first operand: " + firstOperand);
+                    Console.WriteLine("second operand: " + secondOperand);
+                    Console.WriteLine("which operation you choose: substract");
+                    Console.WriteLine(firstOperand + " - " + secondOperand + " = " + substraction);
+
+                }
+
+                if ((operation == "Multiply") || (operation == "multiply"))
+                {
+                    Multiply(firstOperand, secondOperand);
+                    float multiplication = Multiply(firstOperand, secondOperand);
+                    Console.WriteLine("first operand: " + firstOperand);
+                    Console.WriteLine("second operand: " + secondOperand);
+                    Console.WriteLine("which operation you choose: multiply");
+                    Console.WriteLine(firstOperand + " x " + secondOperand + " = " + multiplication);
+
+                }
+
+                if ((operation == "Divide") || (operation == "divide"))
+                {
+                    Divide(firstOperand, secondOperand);
+                    float divide = Divide(firstOperand, secondOperand);
+                    Console.WriteLine("first operand: " + firstOperand);
+                    Console.WriteLine("second operand: " + secondOperand);
+                    Console.WriteLine("which operation you choose: devide");
+                    Console.WriteLine(firstOperand + " / " + secondOperand + " = " + divide);
+
+                }
+
+                if ((operation == "Modulo") || (operation == "modulo"))
+                {
+                    int modulo = Modulo(Convert.ToInt32(firstOperand), Convert.ToInt32(secondOperand));
+                    Console.WriteLine("first operand: " + firstOperand);
+                    Console.WriteLine("second operand: " + secondOperand);
+                    Console.WriteLine("which operation you choose: modulo");
+                    Console.WriteLine(firstOperand + " % " + secondOperand + " = " + modulo);
+
+                }
+
+                else
+                    {
+                        Console.WriteLine("Unknown operation '" + operation + "'");
+                    }
 
             }
-
-            if ((operation == "Substract") || (operation == "substract"))
-            {
-
-                Substract(firstOperand, secondOperand);
-                float substraction = Substract(firstOperand, secondOperand);
-                Console.WriteLine("first operand: " + firstOperand);
-                Console.WriteLine("second operand: " + secondOperand);
-                Console.WriteLine("which operation you choose: substract");
-                Console.WriteLine(firstOperand + " - " + secondOperand + " = " + substraction);
-
-            }
-
-            if ((operation == "Multiply") || (operation == "multiply"))
-            {
-                Multiply(firstOperand, secondOperand);
-                float multiplication = Multiply(firstOperand, secondOperand);
-                Console.WriteLine("first operand: " + firstOperand);
-                Console.WriteLine("second operand: " + secondOperand);
-                Console.WriteLine("which operation you choose: multiply");
-                Console.WriteLine(firstOperand + " x " + secondOperand + " = " + multiplication);
-
-            }
-
-            if ((operation == "Divide") || (operation == "divide"))
-            {
-                Divide(firstOperand, secondOperand);
-                float divide = Divide(firstOperand, secondOperand);
-                Console.WriteLine("first operand: " + firstOperand);
-                Console.WriteLine("second operand: " + secondOperand);
-                Console.WriteLine("which operation you choose: devide");
-                Console.WriteLine(firstOperand + " / " + secondOperand + " = " + divide);
-
-            }
-
-            if ((operation == "Divide") || (operation == "divide"))
-            {
-                int modulo = Modulo(Convert.ToInt32(firstOperand), Convert.ToInt32(secondOperand));
-                Console.WriteLine("first operand: " + firstOperand);
-                Console.WriteLine("second operand: " + secondOperand);
-                Console.WriteLine("which operation you choose: modulo");
-                Console.WriteLine(firstOperand + " % " + secondOperand + " = " + modulo);
-
-            }
-
-            else
-               {
-                Console.WriteLine("Unknown operation '" + operation + "'");
-               }   
-       
-
         }
 
         static float Add(float firstOperand, float secondOperand)
