@@ -1,0 +1,108 @@
+using System;
+
+namespace Les_classes___quête_jeu_de_combat
+{
+    public class Character
+    {
+
+        public string name;                   //Un nom en attribut
+        public int PV;                       //Des points de vie en attribut
+        public int forceAttaque;            //Une force d'attaque en attribut
+        public int forceDefense;           //Une force de défense en attribut
+
+
+        //Une méthode IsAlive() qui renvoie un booléen indiquant si le personnage est vivant (true) ou mort (false) 
+        
+        public bool IsAlive()
+        {
+            if (PV <= 0)
+            { 
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        //Une méthode IsAttacked() qui prend en paramètre un autre personnage et réalise l'opération suivante : attaqué.pv = (attaqué.pv) - (attaquant.force - attaqué.défense)
+
+        public void IsAttacked(int forceAttaque)
+        { 
+               PV = PV - (forceAttaque - forceDefense);    
+        }                   
+     }
+       
+
+    
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Character character1 = new Character();
+            Character character2 = new Character();
+            character1.name = "Jean";
+            character2.name = "Iurii";
+            character1.PV = 100;
+            character2.PV = 100;
+            character1.forceAttaque = 30;
+            character2.forceAttaque = 35;
+            character1.forceDefense = 10;
+            character2.forceDefense = 8;
+
+
+
+            Random randomGenerator = new Random();
+            int selectedcharacter;
+            while ((character1.IsAlive() == true) && (character2.IsAlive() == true))
+            {
+                selectedcharacter = randomGenerator.Next(0, 2);
+                if (selectedcharacter == 0)
+                {
+                    Console.WriteLine("Player 2 begins to attack");
+                    character1.IsAttacked(character2.forceAttaque);
+
+                   
+                    if (character1.IsAlive())
+                    {
+                        Console.WriteLine("Player 1 has " + character1.PV + " PV left.");
+                    }
+
+                    else
+                    {
+                       
+                        Console.WriteLine("Player 2 wins");
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("Player 1 begins to attack");
+                    character2.IsAttacked(character1.forceAttaque);
+                   
+                    if (character2.IsAlive())
+                    { 
+                        Console.WriteLine("Player 2 has " + character2.PV + " PV left."); 
+                    }
+                    else
+                    {
+                        Console.WriteLine("Player 1 wins");
+                    }
+
+                }
+
+            }
+
+                // Joueur 2 joue, joueur 2 attaque, PVjoueur1 diminue
+                // Si PV joueur1 > 0 alors écrire le reste de PV du joueur 1
+                // Sinon la fonction IsAlive est fausse, le joueur 1 est mort, écrire "le joueur 2 a gagné"
+                // Joueur 1 joue, joueur 1 attaque, PVjoueur2 diminue
+                // Si PV joueur2 > 0 alors écrire le reste de PV du joueur 2
+                // Sinon la fonction IsAlive est fausse, le joueur 2 est mort, écrire "le joueur 1 a gagné"
+                // Tant que IsAlive est true on recommence la boucle
+
+        }
+    }
+}
