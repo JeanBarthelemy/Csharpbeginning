@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+namespace DictionnaireQuete2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<char, string> dico = new Dictionary<char, string>();
+            dico['a'] = "apple";
+            dico['b'] = "banana";
+            dico['c'] = "cherry";
+            
+            dico.Remove('c');
+
+            int count = dico.Count;
+            foreach (KeyValuePair<char, string> item in dico)
+            {
+                Console.WriteLine(item.Key +" : "+ item.Value);
+            }
+        }
+    }
+}
