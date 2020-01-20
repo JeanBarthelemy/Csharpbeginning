@@ -20,7 +20,7 @@ namespace Encapsulation_BeerEncapsulation
             beerEncapsulator.SetAvailableBottles(addedBottles);
             Console.WriteLine("How many capsules do you have ?");
             int addedCapsules = Convert.ToInt32(Console.ReadLine());
-            beerEncapsulator.SetAvailableCapsules(addedBottles);
+            beerEncapsulator.SetAvailableCapsules(addedCapsules);
             Console.WriteLine("How many bottles do you want to produce ?");
             int bottlesToProduce = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(beerEncapsulator.ProduceEncapsulatedBeerBottles(bottlesToProduce));
