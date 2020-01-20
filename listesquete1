@@ -1,0 +1,23 @@
+using System;
+
+namespace listesquête1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            System.Collections.Generic.List<char> liste = new System.Collections.Generic.List<char>();
+            liste.Add('h');
+            liste.Add('e');
+            liste.Add('y');
+            liste.RemoveAt(0);
+            liste.Remove('y');
+            liste[0] = 'a';
+
+            for (int i = 0; i < 1; i++)
+            Console.WriteLine(liste[i] + " ");
+
+
+        }
+    }
+}
