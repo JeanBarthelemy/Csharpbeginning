@@ -1,0 +1,61 @@
+using System;
+
+namespace POO_Les_constructeurs
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many floors should have the building you have to build ?");
+            int nbOfFloors = Convert.ToInt32(Console.ReadLine());
+            Building buildingViaFloors = new Building(nbOfFloors);
+            Console.WriteLine("Okay, so the building should have " + buildingViaFloors.GetFloorCount() + " floors");
+            Console.WriteLine("A regular building would be " + buildingViaFloors.GetSize() + " m height, if you choose regular floors of 3 m height.");
+            Console.WriteLine("If you would like to set the height of the floors in function of the height of the building, then please type the height of the building you want to build.");
+
+            double size = Convert.ToDouble(Console.ReadLine());
+            Building buildingViaHeightAndFloors = new Building(nbOfFloors, size);
+            buildingViaHeightAndFloors.SetSize(size);
+            Console.WriteLine("So you would like to build a {0} m high building.", buildingViaHeightAndFloors.GetSize());
+            Console.WriteLine("The floor's maximum size would then be {0} m. You decide if that's good or not, I'm not an architect !", buildingViaHeightAndFloors.GetFloorMaxSize(buildingViaHeightAndFloors.GetSize(), buildingViaFloors.GetFloorCount()));
+        }
+    }
+
+    class Building
+    {
+        private double _height;
+        private int _nbOfFloors;
+
+        public Building(int nbOfFloors) 
+        {
+            _nbOfFloors = nbOfFloors;
+            _height = nbOfFloors * 3;
+        }
+
+        public Building(int nbOfFloors, double height)
+        {
+            _nbOfFloors = nbOfFloors;
+            _height = height;
+        }
+
+        public double GetSize()
+        {
+            return _height;
+        }
+
+        public void SetSize(double height)
+        {
+            _height = height;
+        }
+
+        public int GetFloorCount()
+        {
+            return _nbOfFloors;
+        }
+
+        public double GetFloorMaxSize(double height, int nbOfFloor)
+        {
+            return height/(Convert.ToDouble(nbOfFloor));
+        }
+    }
+}
