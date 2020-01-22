@@ -1,0 +1,115 @@
+using System;
+
+namespace POO_Héritage_Classification_génétique_animaux
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Human human = new Human("Norman the human");
+            Monkey monkey = new Monkey("Kokey the monkey");
+            Elephant elephant = new Elephant("Grant the elephant");
+            Turtle turtle = new Turtle("Lisel the turtle");
+            Lezard lezard = new Lezard("Bernard the lezard");
+
+            Animal[] animalsTable = new Animal[] { human, monkey, elephant, turtle, lezard };
+            foreach (Animal animal in animalsTable)
+            {
+                animal.Eat();
+                animal.Move();
+            }
+        
+
+        }
+    }
+
+    public abstract class Animal
+    {
+        protected string _name;
+        protected short _legsCount;
+        protected string _skin;
+
+        public Animal(string name, short legsCount, string skin)
+        {
+            _name = name;
+            _legsCount = legsCount;
+            _skin = skin;
+        }
+
+        public void Eat()
+        {
+            Console.WriteLine(_name + " eats with its mouth.");
+        }
+
+        public virtual void Move()
+        {
+
+        }
+
+    }
+    
+    public class Human : Animal
+    {
+        public Human(string name) : base(name, 2, "smooth")
+        {
+            
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves with " + _legsCount + " legs standing up.");
+        }
+    }
+
+    public class Monkey : Animal
+    {
+        public Monkey(string name) : base(name, 4, "hairy")
+        {
+
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves with " + _legsCount + " members acting like arms do.");
+        }
+    }
+
+    public class Elephant : Animal
+    {
+        public Elephant(string name) : base(name, 4, "rough")
+        {
+
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves with " + _legsCount + " tall legs.");
+        }
+    }
+
+    public class Turtle : Animal
+    {
+        public Turtle(string name) : base(name, 4, "carapace")
+        {
+
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves with " + _legsCount + " legs very slowly.");
+        }
+    }
+
+    public class Lezard : Animal
+    {
+        public Lezard(string name) : base(name, 4, "scales")
+        {
+
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine(_name + " moves with " + _legsCount + " legs pretty quickly.");
+        }
+    }
+}
