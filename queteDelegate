@@ -1,0 +1,29 @@
+using System;
+
+namespace Delegate_Quête_Challenge
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ShowMoney showmoney = Dollars;
+            showmoney(100);
+            showmoney = Euro;
+            showmoney(100);
+        }
+
+        public delegate int ShowMoney(int x);
+
+        public static int Dollars(int x)
+        {
+            Console.WriteLine(x + " $");
+            return x;
+        }
+
+        public static int Euro(int x)
+        {
+            Console.WriteLine(x + " €");
+            return x;  
+        }
+    }
+}
