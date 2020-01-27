@@ -20,9 +20,6 @@ namespace Encapsulation
 
     public class House
     {
-        private List<Room> _rooms;
-        private List<Door> _doors;
-
         public List<Room> Rooms
         {
             get { return _rooms; }  
@@ -54,8 +51,6 @@ namespace Encapsulation
 
     public class Room
     {
-        private List<Door> _doors;
-
         public List<Door> Doors
         {
             get { return _doors; } 
@@ -74,7 +69,6 @@ namespace Encapsulation
 
     public class Door
     {
-        private bool _isOpen;
 
         public bool IsOpen
         {
