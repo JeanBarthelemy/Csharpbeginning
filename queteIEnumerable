@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace QueteIEnumerables
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] integers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Console.WriteLine("Please type an integer ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            IEnumerable<int> integersLowerThanN = integers.Where((x) => x <= n);
+            foreach (int value in integersLowerThanN) 
+            {
+                Console.Write(value + " ");
+            }
+            Console.WriteLine();
+            double average = integersLowerThanN.Average();
+            Console.Write("Average = " + average);
+        }
+    }
+}
