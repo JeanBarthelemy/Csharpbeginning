@@ -14,9 +14,9 @@ namespace SOLID_Interface_Segregation_Principle_quete_2
         void Drive(long miles);
     }
 
-    interface IRocketable
+    interface IRocketable : IDrivable
     {
-        public abstract void LaunchRocket(); 
+        void LaunchRocket(); 
     }
 
     class Car : IDrivable
@@ -27,7 +27,7 @@ namespace SOLID_Interface_Segregation_Principle_quete_2
         }
     }
 
-    class FlyingCar : IDrivable, IRocketable
+    class FlyingCar : IRocketable
     {
 
         private bool _isRocketLaunched;
@@ -49,7 +49,7 @@ namespace SOLID_Interface_Segregation_Principle_quete_2
 
     }
 
-    class SpaceShip : IDrivable, IRocketable
+    class SpaceShip : IRocketable
     {
         private bool _isRocketLaunched;
 
